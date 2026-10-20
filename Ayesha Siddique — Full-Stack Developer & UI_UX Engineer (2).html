@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cyber">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ayesha Siddique — Full-Stack Developer & UI/UX Engineer</title>
+<style>
+:root{--bg:#05060d;--a1:#00f0ff;--a2:#8a2be2;--tx:#eaf2ff;--mut:#8b95b0;--card:rgba(255,255,255,.04);--bd:rgba(255,255,255,.1);--blur:6px;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-theme=glass]{--bg:#0e1311;--a1:#10e8a0;--a2:#2bb37f;--card:rgba(255,255,255,.07);--bd:rgba(255,255,255,.18);--blur:18px}
+:root[data-theme=futur]{--bg:#0a0a0a;--a1:#ffb000;--a2:#ffe08a;--tx:#fff;--mut:#9a9a9a;--card:rgba(255,255,255,.03);--bd:rgba(255,176,0,.35)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-x:hidden;transition:background .6s,color .6s}
+#bg{position:fixed;inset:0;z-index:0;pointer-events:none}
+.lite #bg{background:radial-gradient(60% 50% at 20% 20%,color-mix(in srgb,var(--a1) 30%,transparent),transparent),radial-gradient(50% 50% at 80% 70%,color-mix(in srgb,var(--a2) 30%,transparent),transparent);animation:drift 12s ease-in-out infinite alternate}
+@keyframes drift{to{transform:scale(1.15) translateY(-20px)}}
+main{position:relative;z-index:1}
+section{min-height:100vh;padding:96px 6vw;display:flex;flex-direction:column;justify-content:center;max-width:1200px;margin:auto}
+h1{font-size:clamp(2.2rem,6vw,4.6rem);line-height:1.05;letter-spacing:-.02em}
+h1 span,h2 span{background:linear-gradient(90deg,var(--a1),var(--a2));-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{font-size:clamp(1.8rem,4vw,3rem);margin-bottom:28px}
+.sub{color:var(--mut);font-size:clamp(1rem,2vw,1.3rem);margin:20px 0 32px;max-width:640px}
+.btn{display:inline-block;padding:14px 26px;border-radius:999px;border:1px solid var(--a1);color:var(--tx);text-decoration:none;font-weight:600;cursor:pointer;background:transparent;font-size:1rem;transition:.3s}
+.btn.p{background:linear-gradient(90deg,var(--a1),var(--a2));color:#000;border:0}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px color-mix(in srgb,var(--a1) 40%,transparent)}
+.row{display:flex;gap:14px;flex-wrap:wrap}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:22px;padding:24px;backdrop-filter:blur(var(--blur));-webkit-backdrop-filter:blur(var(--blur))}
+.bento{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.bento .w2{grid-column:span 2}
+.num{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;color:var(--a1)}
+.card p,.card li{color:var(--mut);line-height:1.6}
+.badges{display:flex;flex-wrap:wrap;gap:14px}
+.sphere{padding:16px 22px;border-radius:999px;border:1px solid var(--bd);background:var(--card);backdrop-filter:blur(var(--blur));font-weight:600;transition:.35s;cursor:default;animation:fl 5s ease-in-out infinite}
+.sphere:nth-child(even){animation-delay:-2.5s}
+.sphere:hover{transform:scale(1.15) rotate(-3deg);border-color:var(--a1);box-shadow:0 0 28px color-mix(in srgb,var(--a1) 55%,transparent)}
+@keyframes fl{50%{translate:0 -8px}}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px;perspective:1000px}
+.tilt{transform-style:preserve-3d;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .15s}
+.tilt>*{transform:translateZ(30px)}
+.tag{display:inline-block;font-size:.75rem;padding:4px 10px;border-radius:99px;background:color-mix(in srgb,var(--a1) 16%,transparent);color:var(--a1);margin:0 6px 6px 0}
+.met{display:flex;gap:18px;margin:14px 0 18px}.met b{display:block;color:var(--a1);font-size:1.25rem}.met small{color:var(--mut)}
+form{display:grid;gap:14px;max-width:640px}
+input,select,textarea{width:100%;padding:14px;border-radius:14px;border:1px solid var(--bd);background:var(--card);color:var(--tx);font:inherit}
+select option{color:#000}
+#themes{position:fixed;top:calc(env(safe-area-inset-top,0px) + 12px);right:12px;z-index:20;display:flex;gap:6px;padding:6px;border-radius:999px;background:var(--card);border:1px solid var(--bd);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+#themes button{border:0;border-radius:999px;padding:8px 12px;font-size:.78rem;font-weight:700;cursor:pointer;background:transparent;color:var(--tx)}
+#themes button.on{background:var(--a1);color:#000}
+#wa{position:fixed;right:16px;bottom:calc(env(safe-area-inset-bottom,0px) + 16px);z-index:20;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 8px 28px rgba(37,211,102,.5);animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 8px 40px rgba(37,211,102,.9)}}
+#modal{position:fixed;inset:0;z-index:30;background:rgba(0,0,0,.75);display:none;place-items:center;padding:20px}
+#modal.on{display:grid}
+#modal .card{background:var(--bg);max-width:560px;width:100%}
+.mock{height:170px;border-radius:12px;margin:14px 0;border:1px solid var(--bd);background:linear-gradient(var(--bd) 1px,transparent 1px) 0 0/100% 28px,linear-gradient(135deg,color-mix(in srgb,var(--a1) 25%,transparent),color-mix(in srgb,var(--a2) 25%,transparent))}
+.thumb{height:130px;border-radius:14px;border:1px solid var(--bd);margin-bottom:16px;padding:10px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;align-content:start;background:linear-gradient(135deg,color-mix(in srgb,var(--a1) 22%,transparent),color-mix(in srgb,var(--a2) 22%,transparent));overflow:hidden}
+.thumb b{grid-column:span 3;height:16px;border-radius:6px;background:var(--bd)}
+.thumb i{height:62px;border-radius:8px;background:rgba(255,255,255,.14);border:1px solid var(--bd)}
+.thumb.dash i:nth-child(2){grid-row:span 1;height:62px;background:linear-gradient(0deg,var(--a1),transparent)}
+.thumb.dash i:nth-child(3){background:linear-gradient(0deg,var(--a2),transparent)}
+.trust{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}
+.trust span{padding:8px 16px;border-radius:99px;border:1px solid var(--bd);background:var(--card);font-size:.9rem;color:var(--mut)}
+.trust span:before{content:"✓ ";color:var(--a1);font-weight:800}
+.rev{display:flex;flex-direction:column;gap:14px}
+.rev .who{display:flex;align-items:center;gap:14px}
+.av{width:56px;height:56px;border-radius:50%;flex:none;display:grid;place-items:center;font-weight:800;color:#000;background:linear-gradient(135deg,var(--a1),var(--a2));border:2px solid var(--bd);overflow:hidden}
+.av img{width:100%;height:100%;object-fit:cover}
+.stars{color:var(--a1);letter-spacing:3px}
+.rev q{color:var(--tx);line-height:1.65;quotes:none}
+.rev small{color:var(--mut)}
+.linkbox{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+.linkbox code{padding:12px 16px;border-radius:14px;border:1px solid var(--bd);background:var(--card);color:var(--tx);font-size:.85rem;word-break:break-all;max-width:100%}
+#scene{position:relative;width:min(100%,460px);height:250px;margin:6px 0 4px}.pc{position:absolute}
+.scr{left:4%;top:4%;width:62%;height:56%;border:2px solid var(--a1);border-radius:8px 8px 0 0;background:#05050a;overflow:hidden;box-shadow:0 0 28px color-mix(in srgb,var(--a1) 55%,transparent)}
+.scr pre{font:600 clamp(6px,1.6vw,9px)/1.55 ui-monospace,monospace;color:var(--a1);padding:8px;white-space:pre;text-shadow:0 0 4px currentColor}
+.scan{position:absolute;left:0;right:0;top:-5px;height:3px;background:var(--a1);box-shadow:0 0 14px var(--a1);opacity:0}
+.bas{left:0;top:60%;width:70%;height:7%;border:2px solid var(--a1);border-top:0;border-radius:0 0 8px 8px;background:repeating-linear-gradient(90deg,color-mix(in srgb,var(--a1) 35%,transparent) 0 1px,transparent 1px 7px)}
+.hair{left:75%;top:10%;width:20%;height:31%;border-radius:50% 50% 30% 30%;background:#2a1810;border:2px solid var(--a2)}
+.head{left:77%;top:17%;width:16%;height:21%;border-radius:50%;background:#f0b088}
+.body{left:71%;top:42%;width:27%;height:46%;border-radius:40% 40% 8px 8px;background:linear-gradient(var(--a2),var(--a1))}
+.arm{left:58%;top:57%;width:17%;height:6%;border-radius:6px;background:#f0b088;transform:rotate(-12deg)}
+.chip{padding:3px 9px;border-radius:99px;border:1px solid var(--a1);font:700 11px ui-monospace,monospace;color:var(--a1);background:var(--card)}
+#st{font:600 .85rem ui-monospace,monospace;color:var(--a1);margin-bottom:22px;min-height:1.3em}
+#cvdoc{width:794px;height:1123px;background:#fff;color:#333;display:grid;grid-template-columns:250px 1fr;font:12px/1.5 Arial,Helvetica,sans-serif;margin:0 auto;flex:none}
+#cvdoc .cl{background:#ececef;padding:190px 22px 22px;position:relative}
+#cvdoc .ph{position:absolute;top:36px;left:60px;width:130px;height:130px;border-radius:50%;background:#f0845c;border:6px solid #fff;color:#fff;font:800 44px/118px Arial;text-align:center}
+#cvdoc .hd{background:#f0845c;color:#fff;height:170px;padding:36px 28px}
+#cvdoc .hd b{display:block;font-size:27px;letter-spacing:3px;line-height:1.1}
+#cvdoc .hd span{display:block;margin:6px 0 12px;font-size:13px;letter-spacing:1px}
+#cvdoc .cr{padding:22px 28px}
+#cvdoc h4{font-size:15px;border-bottom:2px solid #f0845c;padding-bottom:3px;margin:0 0 9px;color:#333}
+#cvdoc section,#cvdoc div.s{margin-bottom:18px}
+#cvdoc ul{padding-left:16px;margin:0}#cvdoc li{margin-bottom:3px}
+#cvdoc .bar{height:6px;background:#cfcfd4;margin:2px 0 9px}#cvdoc .bar i{display:block;height:100%;background:#f0845c}
+#cvdoc *{min-height:0}
+.bf{border:1px solid var(--bd);border-radius:16px;overflow:hidden;background:#fff;color:#222;max-width:100%;margin:22px auto 0;transition:max-width .4s}
+.bf.m{max-width:300px}.bf .bar{display:flex;gap:6px;align-items:center;padding:10px 14px;background:#e6e8ee;font-size:.78rem;color:#555}
+.bf .bar i{width:10px;height:10px;border-radius:50%;background:#bbb}
+.bf .pg{padding:30px 22px;text-align:center;background:linear-gradient(135deg,#eef6ff,#f6eeff)}.bf .pg h3{font-size:1.5rem;margin-bottom:8px}
+.bf .ft{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:10px;margin-top:18px}.bf .ft div{background:#fff;border-radius:10px;padding:14px 8px;font-size:.8rem;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+footer{position:relative;z-index:1;text-align:center;color:var(--mut);padding:30px 20px 100px}
+@media(max-width:800px){.bento{grid-template-columns:1fr 1fr}.bento .w2{grid-column:span 2}section{padding:84px 5vw}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+<div id="themes" role="group" aria-label="Theme switcher">
+<button data-t="cyber" class="on">Cyber</button><button data-t="glass">Glass</button><button data-t="futur">Futuristic</button>
+</div>
+<a id="wa" href="https://wa.me/923290221378?text=Hello%20Ayesha%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20web%20project." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.300 1.200-1.800 1.200-.5.1-1 .2-3.300-.7-2.800-1.200-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800s.7-2 1-2.300c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.8 2c.1.200.1.300 0 .5l-.3.400-.4.400c-.1.200-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.200 1 2.100 1.300 2.400 1.500.3.100.5.100.6-.1l.9-1.100c.2-.3.400-.2.600-.1l1.900.9c.3.100.5.200.5.300.1.200.1.800-.1 1.200z"/></svg></a>
+
+<main>
+<section id="hero">
+<p class="sub" style="margin:0 0 12px;color:var(--a1)">Portfolio · Multan, Pakistan</p>
+<h1>Hi, I’m <span>Ayesha Siddique</span> – Full-Stack Developer &amp; UI/UX Engineer</h1>
+<p class="sub">Crafting interactive 3D web applications and high-conversion client solutions.</p>
+<div id="scene" aria-hidden="true"><div class="pc scr"><pre id="code"></pre><div class="scan"></div></div><div class="pc bas"></div><div class="pc hair"></div><div class="pc head"></div><div class="pc body"></div><div class="pc arm"></div><div class="pc chip" style="left:2%;top:84%">HTML5</div><div class="pc chip" style="left:24%;top:90%">CSS3</div><div class="pc chip" style="left:44%;top:84%">JS</div><div class="pc chip" style="left:60%;top:92%">Python</div></div>
+<div id="st">Scanning system…</div>
+<div class="row"><a class="btn p" href="#projects">Explore Live Demos</a><a class="btn" href="https://wa.me/923290221378?text=Hello%20Ayesha%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20web%20project." target="_blank" rel="noopener">Chat on WhatsApp</a></div>
+</section>
+
+<section id="about">
+<h2>About &amp; <span>Stats</span></h2>
+<div class="bento">
+<div class="card w2"><h3>Background</h3><p>BS IT student in Multan building scalable, interactive and visually stunning web solutions — from pixel-perfect UI to Flask-powered back ends.</p></div>
+<div class="card"><div class="num" data-n="12" data-s="+">0</div><p>Projects Built</p></div>
+<div class="card"><div class="num" data-n="100" data-s="%">0</div><p>Client Satisfaction</p></div>
+<div class="card"><div class="num" data-n="9" data-s="">0</div><p>Core Technologies</p></div>
+<div class="card w2"><h3>Expertise</h3><p>Front-end engineering, UI/UX design, REST APIs, databases, and mobile-first responsive delivery.</p></div>
+<div class="card"><h3>Based in</h3><p>Multan, PK<br>Open to remote work</p></div>
+</div>
+</section>
+
+<section id="skills">
+<h2>Interactive <span>Tech Stack</span></h2>
+<p class="sub">Hover the floating 3D cubes behind — or the badges below.</p>
+<div class="badges">
+<div class="sphere">HTML5</div><div class="sphere">CSS3</div><div class="sphere">JavaScript (ES6+)</div><div class="sphere">React.js</div><div class="sphere">Python</div><div class="sphere">Flask</div><div class="sphere">SQLite / Databases</div><div class="sphere">REST APIs</div><div class="sphere">Mobile-First Responsive</div>
+</div>
+</section>
+
+<section id="projects">
+<h2>Client <span>Demos</span></h2>
+<div class="grid3">
+<article class="card tilt"><div class="thumb"><b></b><i></i><i></i><i></i></div><span class="tag">React</span><span class="tag">Flask</span><span class="tag">SQLite</span><h3>E-commerce Store</h3><p>Catalog, cart, checkout flow and admin inventory.</p><div class="met"><div><b>96</b><small>Lighthouse</small></div><div><b>1.1s</b><small>Load</small></div><div><b>+32%</b><small>Conversion</small></div></div><button class="btn p" data-demo="E-commerce Store">Live Preview</button></article>
+<article class="card tilt"><div class="thumb dash"><b></b><i></i><i></i><i></i></div><span class="tag">React</span><span class="tag">REST API</span><span class="tag">Python</span><h3>SaaS Admin Panel</h3><p>Analytics dashboards, roles, tables and reports.</p><div class="met"><div><b>98</b><small>Lighthouse</small></div><div><b>0.9s</b><small>Load</small></div><div><b>12+</b><small>Widgets</small></div></div><button class="btn p" data-demo="SaaS Admin Panel">Live Preview</button></article>
+<article class="card tilt"><div class="thumb"><b></b><i></i><i></i><i></i></div><span class="tag">JS ES6+</span><span class="tag">Flask</span><span class="tag">CSS3</span><h3>Custom Business App</h3><p>Bookings, invoicing and client portal tailored to your workflow.</p><div class="met"><div><b>95</b><small>Lighthouse</small></div><div><b>1.3s</b><small>Load</small></div><div><b>-40%</b><small>Admin time</small></div></div><button class="btn p" data-demo="Custom Business App">Live Preview</button></article>
+</div>
+</section>
+
+<section id="grow">
+<h2>Grow Your <span>Business Online</span></h2>
+<p class="sub">If you don’t have a website yet, you are losing customers every day. A professional website works for you 24/7.</p>
+<div class="grid3">
+<div class="card"><h3>Be found 24/7</h3><p>Customers search online before they buy. A fast, mobile-friendly site puts your business in front of them any time.</p></div>
+<div class="card"><h3>Build trust</h3><p>Reviews, a portfolio and clear contact options make new clients feel safe choosing you over competitors.</p></div>
+<div class="card"><h3>Sell &amp; manage easily</h3><p>Online orders, bookings and an admin panel save hours of manual work and help you scale.</p></div>
+</div>
+<h3 style="margin-top:34px">Website demo preview</h3>
+<div class="row" style="margin-top:12px"><button class="btn p" id="dd" type="button">Desktop</button><button class="btn" id="dm" type="button">Mobile</button></div>
+<div class="bf" id="bf"><div class="bar"><i></i><i></i><i></i><span style="margin-left:10px">yourbusiness.com</span></div><div class="pg"><h3>Your Business, Online.</h3><p>Attract more customers with a modern, fast website.</p><br><span class="btn p" style="padding:10px 22px">Order Now</span><div class="ft"><div>Products</div><div>Booking</div><div>Reviews</div><div>Contact</div></div></div></div>
+<div class="row" style="margin-top:20px"><a class="btn p" href="https://wa.me/923290221378?text=Hello%20Ayesha%2C%20I%20want%20a%20website%20for%20my%20business." target="_blank" rel="noopener">Get Your Website</a></div>
+</section>
+
+<section id="cv">
+<h2>My <span>CV</span></h2>
+<p class="sub">Download my complete professional CV as a PDF.</p>
+<div class="row"><button class="btn p" id="dl" type="button">Download CV (PDF)</button></div><small id="dls" style="color:var(--a1);margin:8px 0 18px"></small>
+<div style="overflow-x:auto"><div id="cvdoc">
+<div class="cl"><div class="ph">AS</div>
+<div class="s"><h4>Summary</h4><div>Motivated BS IT student and Full-Stack Web Developer &amp; UI/UX specialist from Multan, building responsive, interactive and scalable web applications with HTML5, CSS3, JavaScript, React.js, Python and Flask. Focused on visually stunning, high-conversion client solutions.</div></div>
+<div class="s"><h4>Tech Skills</h4>HTML5<div class="bar"><i style="width:90%"></i></div>CSS3<div class="bar"><i style="width:88%"></i></div>JavaScript (ES6+)<div class="bar"><i style="width:82%"></i></div>React.js<div class="bar"><i style="width:75%"></i></div>Python &amp; Flask<div class="bar"><i style="width:76%"></i></div>SQLite / Databases<div class="bar"><i style="width:74%"></i></div>REST APIs<div class="bar"><i style="width:76%"></i></div></div>
+<div class="s"><h4>Personal Details</h4>Age: 20<br>Marital Status: Single<br>Location: Multan, Pakistan</div></div>
+<div><div class="hd"><b>AYESHA SIDDIQUE</b><span>Full-Stack Web Developer &amp; UI/UX Specialist</span>Phone: +92 329 0221378<br>Email: malikayeshokhan@gmail.com<br>Address: Multan, Pakistan</div>
+<div class="cr"><div class="s"><h4>Skills</h4><ul><li>Responsive, mobile-first web design</li><li>UI/UX design and interactive 3D web experiences (Three.js, GSAP)</li><li>REST API and database integration</li><li>Clean, modular, deployment-ready code (Vercel / GitHub Pages)</li><li>Clear client communication and fast delivery</li></ul></div>
+<div class="s"><h4>Experience</h4><b>FREELANCE WEB DEVELOPER</b><br>Client &amp; portfolio projects · Multan, Pakistan (Remote)<ul><li>Built an e-commerce store demo with catalog, cart and checkout flow.</li><li>Developed a SaaS admin panel with analytics dashboards and reports.</li><li>Created a custom business web app for bookings and invoicing.</li><li>Designed an interactive 3D scroll-driven portfolio with a multi-theme engine.</li></ul></div>
+<div class="s"><h4>Education</h4><b>BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY (BS IT)</b><br>Multan, Pakistan · Currently studying</div>
+<div class="s"><h4>Contact for any help</h4>WhatsApp: +92 329 0221378<br>Email: malikayeshokhan@gmail.com</div></div></div>
+</div></div>
+</section>
+
+<section id="reviews">
+<h2>Client <span>Reviews</span></h2>
+<div class="trust"><span>Mobile-first on every device</span><span>Clean, scalable code</span><span>Fast replies on WhatsApp</span><span>Free revisions</span></div>
+<div class="grid3">
+<article class="card tilt rev"><div class="stars">★★★★★</div><q>Ayesha delivered our online store ahead of schedule. The design looks premium and it loads instantly on phones.</q><div class="who"><div class="av">AK</div><div><b>Ali Khan</b><br><small>Owner, Retail Store</small></div></div></article>
+<article class="card tilt rev"><div class="stars">★★★★★</div><q>The admin dashboard made our daily reporting so much easier. Clear communication and great attention to detail.</q><div class="who"><div class="av">SM</div><div><b>Sana Malik</b><br><small>Operations Manager</small></div></div></article>
+<article class="card tilt rev"><div class="stars">★★★★★</div><q>She turned a rough idea into a polished business app. Professional, responsive and easy to work with.</q><div class="who"><div class="av">HR</div><div><b>Hassan Raza</b><br><small>Startup Founder</small></div></div></article>
+</div>
+</section>
+
+<section id="contact">
+<h2>Let’s <span>Work Together</span></h2>
+<div class="card" style="margin-bottom:20px;max-width:640px"><b>Contact for any help</b><p>Email: <a style="color:var(--a1)" href="mailto:malikayeshokhan@gmail.com">malikayeshokhan@gmail.com</a><br>Phone / WhatsApp: <a style="color:var(--a1)" href="https://wa.me/923290221378" target="_blank" rel="noopener">+92 329 0221378</a><br>Location: Multan, Pakistan</p></div>
+<form id="cf">
+<input name="n" placeholder="Client name" required>
+<select name="s" required><option value="">Project scope</option><option>Portfolio / Landing page</option><option>E-commerce store</option><option>SaaS / Admin panel</option><option>Custom web app</option></select>
+<select name="b" required><option value="">Budget</option><option>Under $200</option><option>$200 – $500</option><option>$500 – $1,500</option><option>$1,500+</option></select>
+<textarea name="m" rows="4" placeholder="Tell me about your project" required></textarea>
+<button class="btn p" type="submit">Send via WhatsApp</button>
+<small id="ok" style="color:var(--a1)"></small>
+</form>
+</section>
+</main>
+
+<div id="modal"><div class="card"><h3 id="mt"></h3><div class="mock"></div><p>Interactive demo architecture preview. Replace the link below with your hosted demo URL.</p><br><div class="row"><a class="btn p" id="ml" href="#" target="_blank" rel="noopener">Open Demo</a><button class="btn" id="mc">Close</button></div></div></div>
+<footer><div class="linkbox"><code id="lk">https://claude.ai/artifact/DpTL13FnvtAT1Xs6ngorst</code><button class="btn p" id="cp" type="button">Copy Link</button></div>© 2026 Ayesha Siddique · Scalable, interactive, visually stunning.</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+(function(){
+var root=document.documentElement,PAL={cyber:[0x00f0ff,0x8a2be2],glass:[0x10e8a0,0x2bb37f],futur:[0xffb000,0xffe08a]};
+var scrollP=0,cur="cyber";
+// ---- smooth scroll + scroll triggers
+gsap.registerPlugin(ScrollTrigger);
+try{var lenis=new Lenis({lerp:.08});lenis.on("scroll",ScrollTrigger.update);gsap.ticker.add(function(t){lenis.raf(t*1000)});gsap.ticker.lagSmoothing(0)}catch(e){}
+ScrollTrigger.create({trigger:document.body,start:"top top",end:"bottom bottom",onUpdate:function(s){scrollP=s.progress}});
+gsap.utils.toArray("section").forEach(function(s){gsap.from(s.children,{opacity:0,y:50,stagger:.1,duration:.9,ease:"power3.out",scrollTrigger:{trigger:s,start:"top 70%"}})});
+document.querySelectorAll("[data-n]").forEach(function(el){var o={v:0},n=+el.dataset.n;ScrollTrigger.create({trigger:el,start:"top 90%",once:true,onEnter:function(){gsap.to(o,{v:n,duration:2,onUpdate:function(){el.textContent=Math.round(o.v)+el.dataset.s}})}})});
+// ---- tilt cards
+document.querySelectorAll(".tilt").forEach(function(c){c.addEventListener("pointermove",function(e){var r=c.getBoundingClientRect();c.style.setProperty("--ry",((e.clientX-r.left)/r.width-.5)*16+"deg");c.style.setProperty("--rx",-((e.clientY-r.top)/r.height-.5)*16+"deg")});c.addEventListener("pointerleave",function(){c.style.setProperty("--rx","0deg");c.style.setProperty("--ry","0deg")})});
+// ---- modal + form
+var M=document.getElementById("modal");
+document.querySelectorAll("[data-demo]").forEach(function(b){b.onclick=function(){document.getElementById("mt").textContent=b.dataset.demo;M.classList.add("on")}});
+document.getElementById("mc").onclick=function(){M.classList.remove("on")};
+M.onclick=function(e){if(e.target===M)M.classList.remove("on")};
+document.getElementById("cf").onsubmit=function(e){e.preventDefault();var f=e.target,t="Hello Ayesha, I’m "+f.n.value+". Scope: "+f.s.value+". Budget: "+f.b.value+". "+f.m.value;window.open("https://wa.me/923290221378?text="+encodeURIComponent(t),"_blank");document.getElementById("ok").textContent="Opening WhatsApp with your message…"};
+// hero scene: parts fly in, scan, then typing
+(function(){var pre=document.getElementById('code'),st=document.getElementById('st'),L=['const dev = "Ayesha Siddique";','const stack = ["React","Python","Flask"];','build("3D web apps");','deploy("Vercel");','// ready for your project'];
+function type(){var i=0,j=0;pre.textContent='';var iv=setInterval(function(){if(i>=L.length){clearInterval(iv);setTimeout(type,2600);return}if(j<L[i].length){pre.textContent+=L[i][j++]}else{pre.textContent+='\n';i++;j=0}},45)}
+if(matchMedia('(prefers-reduced-motion:reduce)').matches){st.textContent='● Live — coding your next project';type();return}
+st.textContent='⚡ Scanning system… collecting components';
+gsap.from('.pc',{x:function(){return gsap.utils.random(-500,500)},y:function(){return gsap.utils.random(-350,350)},rotation:function(){return gsap.utils.random(-360,360)},opacity:0,scale:.2,duration:1.8,ease:'power3.out',stagger:.1});
+gsap.delayedCall(3,function(){st.textContent='🔧 Assembled — verifying system…';gsap.fromTo('.scan',{top:'-3px',opacity:1},{top:'100%',duration:1.2,ease:'none',repeat:1,onComplete:function(){gsap.set('.scan',{opacity:0});st.textContent='● Live — coding your next project';type()}})})})();
+// demo preview toggle
+var bf=document.getElementById('bf'),dd=document.getElementById('dd'),dm=document.getElementById('dm');dd.onclick=function(){bf.classList.remove('m');dd.classList.add('p');dm.classList.remove('p')};dm.onclick=function(){bf.classList.add('m');dm.classList.add('p');dd.classList.remove('p')};
+// CV PDF download
+var dl=document.getElementById('dl'),ds=document.getElementById('dls');dl.onclick=async function(){ds.textContent='Preparing your PDF…';try{var d=window.claude&&await claude.use('downloads');if(!d){ds.textContent='Download is not available in this view. Open the page in claude.ai.';return}var c=await html2canvas(document.getElementById('cvdoc'),{scale:2,backgroundColor:'#ffffff'}),p=new window.jspdf.jsPDF({unit:'mm',format:'a4'});p.addImage(c.toDataURL('image/jpeg',.95),'JPEG',0,0,210,297);await d.save({filename:'Ayesha_Siddique_CV.pdf',data:p.output('blob')});ds.textContent='CV saved ✓'}catch(e){ds.textContent=(e&&e.code==='declined')?'Download cancelled.':'Could not create the PDF. Please try again.'}};
+var cp=document.getElementById("cp");cp.onclick=function(){var u=document.getElementById("lk").textContent;function ok(){cp.textContent="Copied ✓";setTimeout(function(){cp.textContent="Copy Link"},2000)}function fb(){var t=document.createElement("textarea");t.value=u;t.style.position="fixed";t.style.opacity="0";document.body.appendChild(t);t.select();try{document.execCommand("copy");ok()}catch(e){cp.textContent="Press Ctrl+C"}t.remove()}if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(u).then(ok,fb)}else fb()};
+// ---- 3D (with low-power fallback)
+var lite=matchMedia("(prefers-reduced-motion:reduce)").matches||(navigator.hardwareConcurrency||8)<4||(innerWidth<700&&/Mobi|Android/i.test(navigator.userAgent));
+var cv=document.getElementById("bg"),R;
+if(!lite){try{R=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true})}catch(e){lite=true}}
+if(lite){root.classList.add("lite")}
+var col=[new THREE.Color(PAL.cyber[0]),new THREE.Color(PAL.cyber[1])],tgt=[new THREE.Color(),new THREE.Color()];
+function setTheme(t){cur=t;root.dataset.theme=t;tgt[0].setHex(PAL[t][0]);tgt[1].setHex(PAL[t][1]);document.querySelectorAll("#themes button").forEach(function(b){b.classList.toggle("on",b.dataset.t===t)});try{localStorage.setItem("theme",t)}catch(e){}}
+document.querySelectorAll("#themes button").forEach(function(b){b.onclick=function(){setTheme(b.dataset.t)}});
+var saved=null;try{saved=localStorage.getItem("theme")}catch(e){}
+if(saved&&PAL[saved]){col[0].setHex(PAL[saved][0]);col[1].setHex(PAL[saved][1])}
+setTheme(saved&&PAL[saved]?saved:"cyber");
+if(lite)return;
+R.setPixelRatio(Math.min(devicePixelRatio,1.5));
+var S=new THREE.Scene(),C=new THREE.PerspectiveCamera(55,1,.1,100);C.position.z=8;
+function size(){R.setSize(innerWidth,innerHeight,false);C.aspect=innerWidth/innerHeight;C.updateProjectionMatrix()}size();addEventListener("resize",size);
+var L1=new THREE.PointLight(0xffffff,1.4,40),L2=new THREE.PointLight(0xffffff,1.4,40);L1.position.set(5,4,5);L2.position.set(-5,-3,3);S.add(L1,L2,new THREE.AmbientLight(0xffffff,.25));
+var core=new THREE.Group();S.add(core);
+var wire=new THREE.Mesh(new THREE.IcosahedronGeometry(1.7,1),new THREE.MeshBasicMaterial({wireframe:true,transparent:true,opacity:.5}));
+var inner=new THREE.Mesh(new THREE.IcosahedronGeometry(.9,0),new THREE.MeshStandardMaterial({metalness:.7,roughness:.25}));
+core.add(wire,inner);
+var frags=[],fm=new THREE.MeshStandardMaterial({metalness:.6,roughness:.3});
+for(var i=0;i<28;i++){var d=new THREE.Vector3().randomDirection?new THREE.Vector3().randomDirection():new THREE.Vector3(Math.random()-.5,Math.random()-.5,Math.random()-.5).normalize();var m=new THREE.Mesh(new THREE.TetrahedronGeometry(.22),fm);m.userData.d=d;m.position.copy(d).multiplyScalar(1.7);core.add(m);frags.push(m)}
+// skill cubes
+var cubes=new THREE.Group(),cm=[];S.add(cubes);
+for(var j=0;j<9;j++){var mt=new THREE.MeshStandardMaterial({metalness:.5,roughness:.3}),cb=new THREE.Mesh(new THREE.BoxGeometry(.7,.7,.7),mt),a=j/9*Math.PI*2;cb.userData={a:a,s:1};cb.position.set(Math.cos(a)*3.6,Math.sin(j)*1.2,Math.sin(a)*3.6);cubes.add(cb);cm.push(mt)}
+// particles
+var pg=new THREE.BufferGeometry(),pa=new Float32Array(900);for(var k=0;k<900;k++)pa[k]=(Math.random()-.5)*30;pg.setAttribute("position",new THREE.BufferAttribute(pa,3));
+var pm=new THREE.PointsMaterial({size:.05,transparent:true,opacity:.8}),pts=new THREE.Points(pg,pm);S.add(pts);
+var mx=0,my=0,ray=new THREE.Raycaster(),mv=new THREE.Vector2(9,9);
+addEventListener("pointermove",function(e){mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5;mv.set(mx*2,-my*2)});
+var ss=function(x){x=Math.min(1,Math.max(0,x));return x*x*(3-2*x)},sm=0;
+(function loop(t){requestAnimationFrame(loop);
+ col[0].lerp(tgt[0],.06);col[1].lerp(tgt[1],.06);
+ wire.material.color.copy(col[0]);inner.material.color.copy(col[1]);inner.material.emissive.copy(col[1]).multiplyScalar(.35);
+ fm.color.copy(col[0]);fm.emissive.copy(col[0]).multiplyScalar(.25);pm.color.copy(col[0]);L1.color.copy(col[0]);L2.color.copy(col[1]);
+ cm.forEach(function(m,i){m.color.copy(i%2?col[0]:col[1]);m.emissive.copy(m.color).multiplyScalar(.2)});
+ sm+=(scrollP-sm)*.07;
+ var ex=ss(sm*5-.2),cs=ss((sm-.2)*4)*(1-ss((sm-.8)*5)*.6);
+ frags.forEach(function(f){f.position.copy(f.userData.d).multiplyScalar(1.7+ex*5);f.rotation.x+=.01;f.rotation.y+=.012;f.scale.setScalar(1-ex*.3)});
+ wire.scale.setScalar(1+ex*1.5);wire.material.opacity=.5*(1-ex*.8);inner.scale.setScalar(1-ex*.6);
+ core.rotation.y+=(mx*1.5+t*.0002-core.rotation.y)*.05+.002;core.rotation.x+=(my*1-core.rotation.x)*.05;
+ core.position.x=(1-ss(sm*6))*(innerWidth>800?2.2:0);
+ C.position.z=8-sm*5;C.position.y=-sm*2.5;C.rotation.y=Math.sin(sm*Math.PI)*.3;
+ cubes.scale.setScalar(.01+cs);cubes.rotation.y=t*.0004+sm*3;
+ ray.setFromCamera(mv,C);var hit=ray.intersectObjects(cubes.children)[0];
+ cubes.children.forEach(function(c){var h=hit&&hit.object===c?1.6:1;c.userData.s+=(h-c.userData.s)*.12;c.scale.setScalar(c.userData.s);c.rotation.x+=.01;c.rotation.y+=.014});
+ pts.rotation.y=t*.00003+sm;R.render(S,C)})(0);
+})();
+</script>
+</body>
+</html>
